@@ -5,7 +5,7 @@ class Options:
         self.max_tip = 0
         self.robot_price = 0
         self.iter_count = 0
-        self.orders_num = 0
+        self.orders_count = 0
 
     def __str__(self):
         res = (f'city_size = {self.city_size}\n'
@@ -13,7 +13,7 @@ class Options:
                f'max_tip = {self.max_tip}\n'
                f'robot_price = {self.robot_price}\n'
                f'iter_num = {self.iter_count}\n'
-               f'orders_num = {self.orders_num}\n')
+               f'orders_num = {self.orders_count}\n')
         return res
 
     def parse_first_line(self, line: str):
@@ -25,7 +25,7 @@ class Options:
         final_map = [[] for _ in range(self.city_size)]
         for k in range(self.city_size):
             for char in lines_array[k]:
-                value = 1 if char == '#' else 0
+                value = 0 if char == '#' else 1
                 final_map[k].append(value)
         self.map_array = final_map
 
@@ -44,5 +44,5 @@ class Options:
             from_input = input()
         self.parse_map(char_map)
         from_input = from_input.split(' ')
-        self.iter_count, self.orders_num = int(from_input[0]), int(from_input[1])
+        self.iter_count, self.orders_count = int(from_input[0]), int(from_input[1])
 

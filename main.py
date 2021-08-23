@@ -4,9 +4,6 @@ from work_cycle import WorkCycle
 from work_map import WorkMap
 
 
-# from pathfinding.core.diagonal_movement import DiagonalMovement
-# from pathfinding.core.grid import Grid
-# from pathfinding.finder.a_star import AStarFinder
 
 
 def do_your_best():
